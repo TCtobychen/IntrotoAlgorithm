@@ -1,6 +1,23 @@
 import TC_TreeNode as tree 
 from TC_Linkedlist import *
 
+def Attach(x,y,i): # Attach x to y. i=1 for right, i=0 for left
+	if not x.p==None:
+		if x.p.left==x:
+			x.p.left=None
+		else :
+			x.p.right=None
+	x.p=y
+	if i :
+		if not y.right ==None:
+			print "y has a right sub-tree, please CHECK!"
+			return 
+		y.right=x
+	else:
+		if not y.left==None:
+			print "y has a left sub-tree, please CHECK!"
+			return 
+		y.left=x
 def Insert(root,ob,key):
 	t=root
 	while not t==None:
@@ -50,9 +67,9 @@ def Delete(root,key):
 	if t.left==None :
 		if t.right == None:
 			if t.p.left==t:
-				t.p.left==None
+				t.p.left=None
 			else:
-				t.p.right==None
+				t.p.right=None
 		else :
 			t.right.p=t.p
 			if t.p.left==t:
@@ -64,9 +81,9 @@ def Delete(root,key):
 	if t.right==None :
 		if t.left == None:
 			if t.p.left==t:
-				t.p.left==None
+				t.p.left=None
 			else:
-				t.p.right==None
+				t.p.right=None
 		else :
 			t.left.p=t.p
 			if t.p.left==t:
@@ -93,20 +110,61 @@ def Delete(root,key):
 			t.p.right=m
 		Delete(m.right,y.key)
 
+def L_Rot(root,key):
+	x=Find(root,key)
+	y=x.right
+	x.right=None;y.p=None
+	if not y.left==None:
+		Attach(y.left,x,1)
+	if root==x:
+		Attach(x,y,0)
+		return y
+	else:
+		u=x.p
+		if u.left==x:
+			Attach(x,y,0)
+			Attach(y,u,0)
+		else:
+			Attach(x,y,0)
+			Attach(y,u,1)
+		return root
+def R_Rot(root,key):
+	y=Find(root,key)
+	x=y.left
+	y.left=None;x.p=None
+	if not x.right==None:
+		Attach(x.right,y,0)
+	if root==y:
+		Attach(y,x,1)
+		return x
+	else:
+		u=y.p
+		if u.left==y:
+			Attach(y,x,1)
+			Attach(x,u,0)
+		else:
+			Attach(y,x,1)
+			Attach(x,u,1)
+		return root
+def OutTree(R):
+	q=Queue(R)
+	a=q.get()
+	while not a==None:
+		print a.ob
+		q.pop()
+		if not a.left == None:
+			q.push(a.left)
+		if not a.right == None:
+			q.push(a.right)
+		a=q.get()
+
 # Test Cases:
 L=[5,3,6,8,2,4,10,1,7,9]
 R=tree.Node(L[0],L[0])
 for i in range(1,10):
 	Insert(R,L[i],L[i])
-q=Queue(R)
-a=q.get()
-while not a==None:
-	print a.ob
-	q.pop()
-	if not a.left == None:
-		q.push(a.left)
-	if not a.right == None:
-		q.push(a.right)
-	a=q.get()
+R=L_Rot(R,8)
+OutTree(R)
+
 
 
