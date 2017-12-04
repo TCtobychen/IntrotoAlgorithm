@@ -1,17 +1,17 @@
 #L=raw_input("Please Enter the rows & columns of your matrices here:\n(Note:Use comma to split)\n").split(',')
 L=[30,35,15,5,10,20,25]
 N=len(L)-1  # There are N matrices all together. 
-def CreateListofn(n):
+def CreateListof(n):
 	L=[]
 	for i in range(0,n):
 		L.append(0)
 	return L
-def CreateMatrixofn(n):
+def CreateMatrixof(n):
 	m=[]
 	for j in range(0,n):
-		m.append(CreateListofn(n))
+		m.append(CreateListof(n))
 	return m
-m=CreateMatrixofn(N)
+m=CreateMatrixof(N)
 for l in range(1,N):
 	for i in range(0,N-l):
 		j=i+l
