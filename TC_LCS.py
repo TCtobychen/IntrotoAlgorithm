@@ -44,6 +44,6 @@ def lsc_bt(L1,L2): # It does the job by bottom-up calculating to the need depth.
 		L[len(L1)]=t
 	return t
 
-L=CreateDArrays(N1+1,N2+1)
+'''L=CreateDArrays(N1+1,N2+1)
 print lsc_tb(L1,L2,N1-1,N2-1,L)
-print lsc_bt(L1,L2)
+print lsc_bt(L1,L2)'''
