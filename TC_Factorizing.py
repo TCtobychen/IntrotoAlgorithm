@@ -16,6 +16,6 @@ def Factorize(n):
 	return ans
 
 time_start=time.time()
-print Factorize(6249564825603)
+print Factorize(37547)
 time_end=time.time()
 print 1000*(time_end-time_start)
