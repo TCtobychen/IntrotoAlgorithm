@@ -7,3 +7,6 @@
 - *However, after I watching NOI's students' code, I found that C++ is also great.*
 
 
+### Note:
+
+I'm actually doing problems not only in *Introduction to algorithms* but also the purple book of *Liurujia*. 
