@@ -12,8 +12,6 @@ class Node:
 		else :
 			self.prev.nex=self.nex
 			self.nex.prev=self.prev
-	def __str__(self): 
-		return "%s"%(self.object.object)
 
 def newnode():
 	return Node()
@@ -61,7 +59,3 @@ for i in range(1,20):
 L[0]=5
 print q.get()
 print q.empty()'''
-
-
-
-
