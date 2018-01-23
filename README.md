@@ -2,7 +2,7 @@
 - Using Python/C++ to implement codes in Introduction to Algorithms
 - Any suggestion will be appreciated
 - All my work will be uploaded randomly 
-- ~~Python is **good** !!!!!~~ ==I realize that C++ is more suitable for programming==
+- ~~Python is **good** !!!!!~~  ==I realize that C++ is more suitable for programming==
 - *However, after my watching NOI's students' code, I found that C++ is also great.*
 
 
