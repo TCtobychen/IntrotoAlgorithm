@@ -1,7 +1,7 @@
 from TC_Hash import *
 from TC_Linkedlist import *
-L0=[1,2,3,4,5,6,7,8,9]
-Lt=[9,8,7,6,5,4,3,2,1]
+L0=[1,2,3,4,5,6,7,8,9,10]
+Lt=[10,9,8,7,6,5,4,3,2,1]
 L=[]
 Maxd=len(L0)
 
