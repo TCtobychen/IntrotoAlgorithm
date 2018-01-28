@@ -1,15 +1,11 @@
-//
-//  1.cpp
-//  Learning C++
-//
-//  Created by TC on 2017/9/23.
-//  Copyright © 2017年 杨. All rights reserved.
-//
-
-/*#include <iostream>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-  cout << "Hello World!" << endl;
-}*/
+  double t;
+  double sum = 0;
+  while(cin >> t)
+  sum+=t;
+  cout << sum;
+}

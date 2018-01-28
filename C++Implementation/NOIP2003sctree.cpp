@@ -1,8 +1,10 @@
 #include <iostream>
+#include <cstdio>
+#include <algorithm>
 #define For(x,y) for(int i = x;i<y;i++)
 #define For1(x,y) for(int j=x;j<y;j++)
 using namespace std;
-int d[30][30];
+long long int d[30][30];
 int c[30][30];
 int s[30];
 int N;
@@ -13,27 +15,28 @@ void Read()
   cin >> N;
   For(0,N)
     cin >> s[i];
-  For(0,N)
-    For1(0,N)
-      d[i][j]=0;
+  memset(d,0,sizeof(d));
 }
 
 int dojob(int a, int b)
 {
+  if(d[a][b]>0)
+    return d[a][b];
   if(a>b)
     return 1;
   if(a==b)
-    return s[a];
-  if(d[a][b]>0)
-    return d[a][b];
+    {d[a][b]=s[a];return s[a];}
   int sum = 0;
-  For(a+1,b+1)
-    if(sum<dojob(a+1,i)*dojob(i+1,b))
+  For(a,b)
+  {
+    int temp = dojob(a,i-1)*dojob(i+1,b)+s[i];
+    if(sum<temp)
     {
       c[a][b]=i;
-      sum=dojob(a+1,i)*dojob(i+1,b);
+      sum=temp;
     }
-  sum+=s[a];
+  }
+  d[a][b]=sum;
   return sum;
 }
 
@@ -44,8 +47,8 @@ void print(int a, int b)
   if(a>b)
     return ;
   int t=c[a][b];
-  print(a+1,t);
-  print(a,a);
+  print(t,t);
+  print(a,t-1);
   print(t+1,b);
 }
 
