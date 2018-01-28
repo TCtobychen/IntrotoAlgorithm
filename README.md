@@ -8,4 +8,4 @@
 
 ### Note:
 
-I'm actually doing problems not only in *Introduction to algorithms* but also the purple book of *Liurujia* and some NOIP problems for training. 
+I'm actually doing problems not only in *Introduction to algorithms* but also the purple book of *Liurujia* and some NOIP problems for training, and now also Luogu training. 
